@@ -23,14 +23,16 @@ document.addEventListener('selectionchange', () => {
  * @param {*} examDataName 題庫名稱
  */
 function showFloatingDiv(selectedString, examDataName) {
-  let div = $('#ansBlock')[0]; //document.getElementById("ansBlock");
-  if (!div) {
-    div = createNewFloatingDiv();
+  let examData = getExamDataList()[examDataName];
+  if (examData) {
+    let div = $('#ansBlock')[0]; //document.getElementById("ansBlock");
+    if (!div) {
+      div = createNewFloatingDiv();
+    }
+
+    handleAns(selectedString, examData);
+    rerender();
   }
-
-  handleAns(selectedString, getExamDataList()[examDataName]);
-
-  rerender();
 
 };
 

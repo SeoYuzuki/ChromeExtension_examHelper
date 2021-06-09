@@ -68,9 +68,10 @@ function setBtn(div) {
         rerender();
     });
 
-    div.appendChild(btnX);
-    div.appendChild(btnNext);
     div.appendChild(btnPrevios);
+    div.appendChild(btnNext);
+    div.appendChild(btnX);
+
 }
 
 /**
